@@ -1,3 +1,6 @@
+// @@@Importing Fonts
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans&display=swap');
+
 // @@@Root & Variables
 * {
     padding: 0;
@@ -12,7 +15,7 @@
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            height: 20vh;
+            height: 10vh;
             .nav-item {
                 
                 .nav-link {
@@ -29,6 +32,16 @@
 }
 
 // @@@Landing
-.landing-page {
+.landing {
+    background: #333 url('/images/quino-al-mBQIfKlvowM-unsplash-450w.jpg') no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
     height: 80vh;
+    display: flex;
+    justify-content: center;
+    .landing-content {
+        display: flex;
+        
+    }
+    
 }
