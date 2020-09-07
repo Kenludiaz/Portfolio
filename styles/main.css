@@ -1,9 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Concert+One&family=Open+Sans&display=swap");
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.header .nav {
+  color: white;
 }
 
 .header .nav .nav-list {
@@ -18,15 +22,27 @@
       -ms-flex-pack: center;
           justify-content: center;
   height: 10vh;
+  background-color: #333;
+  border-bottom: #F2F2f2 solid 3px;
+}
+
+.header .nav .nav-list .nav-item {
+  background-color: #F2F2f2;
+  padding: 1rem 1.77rem .33rem;
+  border-radius: 10px 10px 0 0;
 }
 
 .header .nav .nav-list .nav-item .nav-link {
   display: inline-block;
   text-decoration: none;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 .header .nav .nav-list .nav-item + .nav-item {
   margin-left: 5vw;
+  background-color: #CCC;
 }
 
 .landing {
@@ -37,14 +53,58 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.landing .landing-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.landing .name {
+  font-family: 'Abril Fatface', cursive;
+  display: block;
+  color: #CCC;
+  font-size: 3.17rem;
+  margin: 2.17rem 0;
+}
+
+.landing .name::after {
+  content: " ";
+  display: block;
+  color: purple;
+  width: calc(3.17rem + 50px);
+  height: 3px;
+  margin: 0 auto;
+}
+
+.landing .landing-btn {
+  font-family: 'Concert One', cursive;
+  display: inline-block;
+  color: #CCC;
+  background-color: transparent;
+  border: none;
+  font-size: 100px;
+  letter-spacing: -25px;
+  opacity: .6;
+  -webkit-transform: rotate(90deg) translateY(-30px);
+          transform: rotate(90deg) translateY(-30px);
+  cursor: pointer;
+}
+
+.landing .landing-btn::after, .landing .landing-btn::before {
+  content: ">";
+}
+
+.landing .landing-btn::before {
+  opacity: .6;
+}
+
+.landing .landing-btn::after {
+  color: #FFF;
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */

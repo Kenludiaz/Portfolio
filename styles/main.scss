@@ -1,5 +1,16 @@
-// @@@Importing Fonts
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans&display=swap');
+// @@@Importing Fonts && Libraries
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Concert+One&family=Open+Sans&display=swap');
+
+@mixin Concert {
+    font-family: 'Concert One', cursive;;
+}
+@mixin Abril {
+    font-family: 'Abril Fatface', cursive;
+}
+@mixin Open-Sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
 
 // @@@Root & Variables
 * {
@@ -7,26 +18,42 @@
     margin: 0;
     box-sizing: border-box;
 }
+$off-white: #CCC; 
+$white: #F2F2f2;
+$black: #333;
 // @@@Nav
 .header {
     .nav {
+        color: white;
         .nav-list {
             list-style-type: none;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             height: 10vh;
+            background-color: $black; 
+            border-bottom: $white solid 3px;
             .nav-item {
-                
+                background-color: $white;
+                padding: 1rem 1.77rem .33rem;
+                border-radius: 10px 10px 0 0;
                 .nav-link {
                     display: inline-block;
                     text-decoration: none;
-                    
+                    color: $black;
+                    @include Open-Sans();
+                    text-transform: uppercase;
                 }
             }
             .nav-item + .nav-item {
                 margin-left: 5vw;
+                background-color: $off-white;
             }
+            // .external-link {
+            //     color: $white;
+            //     display: block;
+            //     font-size: rem;
+            // }
         }
     }
 }
@@ -38,10 +65,50 @@
     background-blend-mode: multiply;
     height: 80vh;
     display: flex;
-    justify-content: center;
-    .landing-content {
-        display: flex;
-        
+    flex-flow: column;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    .name {
+        @include Abril();
+        display: block;
+        color: $off-white;
+        font-size: 3.17rem;
+        margin: 2.17rem 0;
+        &::after {
+            content: " ";
+            display: block;
+            color: purple;
+            width: calc(3.17rem + 50px);
+            height: 3px;
+            margin: 0 auto;
+        }
     }
+    .landing-btn {
+        @include Concert();
+        display: inline-block;
+        color: $off-white;
+        background-color: transparent;
+        border: none;
+        font-size: 100px;
+        letter-spacing: -25px;
+        opacity: .6;
+        transform: rotate(90deg) translateY(-30px); //Makes greater than an arrow and centered
+        cursor: pointer;
+        &::after,
+        &::before {
+            content: ">";
+        }
+        &::before {
+            opacity: .6;
+        }
+        &::after {
+            color: #FFF;
+            opacity: 1;
+        }
+
+    }
+    
+
     
 }
