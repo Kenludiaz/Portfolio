@@ -1,1 +1,34 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header .nav .nav-list {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 20vh;
+}
+
+.header .nav .nav-list .nav-item .nav-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.header .nav .nav-list .nav-item + .nav-item {
+  margin-left: 5vw;
+}
+
+.landing-page {
+  height: 80vh;
+}
+/*# sourceMappingURL=main.css.map */
