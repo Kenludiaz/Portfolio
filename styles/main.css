@@ -59,9 +59,10 @@ body {
 }
 
 .landing {
-  background: #333 url("/images/quino-al-mBQIfKlvowM-unsplash-450w.jpg") no-repeat;
+  background: #333 url("/images/ian-keefe-LOUCuFYqkwE-unsplash-450w.jpg") no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
+  background-position: center;
   height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,8 +142,8 @@ body {
   padding: 2.34rem 0;
   width: 95%;
   margin: 0 auto 3.17rem;
-  -webkit-box-shadow: #888 0 4px  4px;
-          box-shadow: #888 0 4px  4px;
+  -webkit-box-shadow: #888 0 4px 4px;
+          box-shadow: #888 0 4px 4px;
   background-color: #FFBF00;
 }
 
