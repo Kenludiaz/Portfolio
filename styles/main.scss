@@ -18,13 +18,31 @@
     margin: 0;
     box-sizing: border-box;
 }
+body {
+    @include Open-Sans();
+}
 $off-white: #CCC; 
 $white: #F2F2f2;
 $black: #333;
+$azure-blue: #0080FF;
+$amber: #FFBF00;
+
 // @@@Nav
+@mixin selected {
+    &::after {
+        content: "";
+        display: block;
+        height: 4px;
+        background-color: $amber;
+        border-radius: 3px;
+    }
+}
+@mixin unselected {
+    background-color: $off-white;
+}
 .header {
     .nav {
-        color: white;
+        color: $white;
         .nav-list {
             list-style-type: none;
             display: flex;
@@ -45,9 +63,12 @@ $black: #333;
                     text-transform: uppercase;
                 }
             }
-            .nav-item + .nav-item {
+            .nav-item + .nav-item { //selects second child
                 margin-left: 5vw;
-                background-color: $off-white;
+                @include unselected();
+            }
+            .portfolio-link {
+                @include selected();
             }
             // .external-link {
             //     color: $white;
@@ -108,7 +129,18 @@ $black: #333;
         }
 
     }
-    
+}
 
-    
+// @@@Projects
+.portfolio {
+    text-align: center;
+    .project-container {
+        .project-image {
+            background-image: url(/images/Photography-Mocksite-Kenneth-Lu-Diaz.png);
+            max-width: 400px;
+            height: 300px;
+        }
+        color: $black;
+        text-decoration: none;
+    }
 }
