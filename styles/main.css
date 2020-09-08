@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Concert+One&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -124,14 +125,50 @@ body {
   text-align: center;
 }
 
+.portfolio .portfolio-title {
+  text-transform: uppercase;
+  margin: 1.77rem;
+  color: #0080FF;
+  font-weight: bold;
+}
+
 .portfolio .project-container {
   color: #333;
   text-decoration: none;
+  display: block;
+  border: #FFBF00 6px solid;
+  border-radius: 10px;
+  padding: 2.34rem 0;
+  width: 95%;
+  margin: 0 auto 3.17rem;
+  -webkit-box-shadow: #888 0 4px  4px;
+          box-shadow: #888 0 4px  4px;
+  background-color: #FFBF00;
 }
 
 .portfolio .project-container .project-image {
   background-image: url(/images/Photography-Mocksite-Kenneth-Lu-Diaz.png);
-  max-width: 400px;
+  background-position: top center;
+  max-width: 300px;
   height: 300px;
+  margin: 0 auto 2.34rem;
+  padding: 1rem 0 2.34rem;
+  outline: 3px dotted #ffd966;
+  outline-offset: 5px;
+}
+
+.portfolio .project-container .project-title,
+.portfolio .project-container .project-description {
+  margin: 0 auto;
+  max-width: 35ch;
+  color: #F2F2f2;
+  text-shadow: 1px 1px #888;
+}
+
+.footer {
+  color: #F2F2f2;
+  background-color: #333;
+  text-align: center;
+  padding: 3.17rem;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,6 @@
 // @@@Importing Fonts && Libraries
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Concert+One&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
 
 @mixin Concert {
     font-family: 'Concert One', cursive;;
@@ -26,6 +27,8 @@ $white: #F2F2f2;
 $black: #333;
 $azure-blue: #0080FF;
 $amber: #FFBF00;
+$amber-white: linear-gradient(90deg, rgba(255,191,0,1) 0%, rgba(255,205,54,1) 53%, rgba(255,238,186,1) 100%);
+
 
 // @@@Nav
 @mixin selected {
@@ -133,14 +136,48 @@ $amber: #FFBF00;
 
 // @@@Projects
 .portfolio {
+    .portfolio-title {
+        text-transform: uppercase;
+        margin: 1.77rem;
+        color: $azure-blue;
+        font-weight: bold;
+    }
     text-align: center;
     .project-container {
-        .project-image {
-            background-image: url(/images/Photography-Mocksite-Kenneth-Lu-Diaz.png);
-            max-width: 400px;
-            height: 300px;
-        }
         color: $black;
         text-decoration: none;
+        display: block;
+        border: $amber 6px solid;
+        border-radius: 10px;
+        padding: 2.34rem 0;
+        width: 95%;
+        margin: 0 auto 3.17rem;
+        box-shadow: #888 0 4px  4px;
+        background-color: $amber;
+        .project-image {
+            background-image: url(/images/Photography-Mocksite-Kenneth-Lu-Diaz.png);
+            background-position: top center;
+            max-width: 300px;
+            height: 300px;
+            margin: 0 auto 2.34rem;
+            padding: 1rem 0 2.34rem;
+            outline: 3px dotted lighten($amber, 20%);
+            outline-offset: 5px;
+        }
+        .project-title,  
+        .project-description {
+            margin: 0 auto;
+            max-width: 35ch;
+            color: $white;
+            text-shadow: 1px 1px #888;
+        }
     }
+}
+
+// @@@Footer
+.footer {
+    color: $white;
+    background-color: $black;
+    text-align: center;
+    padding: 3.17rem;
 }
