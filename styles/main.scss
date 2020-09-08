@@ -32,6 +32,7 @@ $amber: #FFBF00;
 
 // @@@Nav
 @mixin selected {
+    background-color: $white;
     &::after {
         content: "";
         display: block;
@@ -42,6 +43,9 @@ $amber: #FFBF00;
 }
 @mixin unselected {
     background-color: $off-white;
+    &::after {
+        display: none;
+    }
 }
 .header {
     .nav {
@@ -68,10 +72,18 @@ $amber: #FFBF00;
             }
             .nav-item + .nav-item { //selects second child
                 margin-left: 5vw;
-                @include unselected();
+                background-color: $off-white;
             }
             .portfolio-link {
                 @include selected();
+            }
+            &:hover {
+                .nav-item {
+                    @include unselected();
+                }
+                .nav-item:hover  {
+                    @include selected();
+                }
             }
             // .external-link {
             //     color: $white;
@@ -83,12 +95,26 @@ $amber: #FFBF00;
 }
 
 // @@@Landing
+@keyframes arrows {
+    0% {
+        opacity: .6;
+    }
+    66% {
+        opacity: .6;
+        color: $off-white;
+    }
+    100% {
+        opacity: 1;
+        color: white;
+    }
+}
 .landing {
-    background: $black url('/images/ian-keefe-LOUCuFYqkwE-unsplash-450w.jpg') no-repeat;
+    background: $black url('/images/sven-read-8p17jXyfIQQ-unsplash550w.jpg') no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
     background-position: center;
     height: 80vh;
+    max-height: 600px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -100,13 +126,26 @@ $amber: #FFBF00;
         color: $off-white;
         font-size: 3.17rem;
         margin: 2.17rem 0;
-        &::after {
-            content: " ";
+        border-bottom: $amber 3px solid;
+    }
+    .landing-info-off {
+        transform: scale(1,0);
+        opacity: 0;
+        transition: opacity 3000ms, transform 300ms ease-in-out;
+        transform-origin: top;
+        .landing-text {
+            display: none;
+        }
+    }
+
+    .landing-info-on {
+        transform: scale(1,1);
+        color: $white;
+        opacity: 1;
+        display: block;
+        .landing-text {
             display: block;
-            color: purple;
-            width: calc(3.17rem + 50px);
-            height: 3px;
-            margin: 0 auto;
+            max-width: 38ch;
         }
     }
     .landing-btn {
@@ -120,6 +159,15 @@ $amber: #FFBF00;
         opacity: .6;
         transform: rotate(90deg) translateY(-30px); //Makes greater than an arrow and centered
         cursor: pointer;
+        &:hover {
+            animation: arrows 1200ms infinite;
+            &::before {
+                animation: arrows 1000ms infinite;
+            }
+            &::after {
+                animation: arrows 1100ms infinite;
+            }
+        }
         &::after,
         &::before {
             content: ">";
@@ -132,6 +180,12 @@ $amber: #FFBF00;
             opacity: 1;
         }
 
+    }
+}
+
+@media (min-width: 800px) {
+    .landing {
+        background-image: url('/images/sven-read-8p17jXyfIQQ-unsplash.jpg');
     }
 }
 
@@ -152,12 +206,13 @@ $amber: #FFBF00;
         border-radius: 10px;
         padding: 2.34rem 0;
         width: 95%;
+        max-width: 350px;
         margin: 0 auto 3.17rem;
         box-shadow: $gray 0 4px  4px;
         background-color: $amber;
         .project-image {
             background-image: url(/images/Photography-Mocksite-Kenneth-Lu-Diaz.png);
-            background-position: top center;
+            background-position-x: -5px;
             max-width: 300px;
             height: 300px;
             margin: 0 auto 2.34rem;

@@ -50,6 +50,10 @@ body {
   background-color: #CCC;
 }
 
+.header .nav .nav-list .portfolio-link {
+  background-color: #F2F2f2;
+}
+
 .header .nav .nav-list .portfolio-link::after {
   content: "";
   display: block;
@@ -58,12 +62,61 @@ body {
   border-radius: 3px;
 }
 
+.header .nav .nav-list:hover .nav-item {
+  background-color: #CCC;
+}
+
+.header .nav .nav-list:hover .nav-item::after {
+  display: none;
+}
+
+.header .nav .nav-list:hover .nav-item:hover {
+  background-color: #F2F2f2;
+}
+
+.header .nav .nav-list:hover .nav-item:hover::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: #FFBF00;
+  border-radius: 3px;
+}
+
+@-webkit-keyframes arrows {
+  0% {
+    opacity: .6;
+  }
+  66% {
+    opacity: .6;
+    color: #CCC;
+  }
+  100% {
+    opacity: 1;
+    color: white;
+  }
+}
+
+@keyframes arrows {
+  0% {
+    opacity: .6;
+  }
+  66% {
+    opacity: .6;
+    color: #CCC;
+  }
+  100% {
+    opacity: 1;
+    color: white;
+  }
+}
+
 .landing {
-  background: #333 url("/images/ian-keefe-LOUCuFYqkwE-unsplash-450w.jpg") no-repeat;
+  background: #333 url("/images/sven-read-8p17jXyfIQQ-unsplash550w.jpg") no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
   background-position: center;
   height: 80vh;
+  max-height: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,15 +137,36 @@ body {
   color: #CCC;
   font-size: 3.17rem;
   margin: 2.17rem 0;
+  border-bottom: #FFBF00 3px solid;
 }
 
-.landing .name::after {
-  content: " ";
+.landing .landing-info-off {
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  opacity: 0;
+  -webkit-transition: opacity 3000ms, -webkit-transform 300ms ease-in-out;
+  transition: opacity 3000ms, -webkit-transform 300ms ease-in-out;
+  transition: opacity 3000ms, transform 300ms ease-in-out;
+  transition: opacity 3000ms, transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+.landing .landing-info-off .landing-text {
+  display: none;
+}
+
+.landing .landing-info-on {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  color: #F2F2f2;
+  opacity: 1;
   display: block;
-  color: purple;
-  width: calc(3.17rem + 50px);
-  height: 3px;
-  margin: 0 auto;
+}
+
+.landing .landing-info-on .landing-text {
+  display: block;
+  max-width: 38ch;
 }
 
 .landing .landing-btn {
@@ -109,6 +183,21 @@ body {
   cursor: pointer;
 }
 
+.landing .landing-btn:hover {
+  -webkit-animation: arrows 1200ms infinite;
+          animation: arrows 1200ms infinite;
+}
+
+.landing .landing-btn:hover::before {
+  -webkit-animation: arrows 1000ms infinite;
+          animation: arrows 1000ms infinite;
+}
+
+.landing .landing-btn:hover::after {
+  -webkit-animation: arrows 1100ms infinite;
+          animation: arrows 1100ms infinite;
+}
+
 .landing .landing-btn::after, .landing .landing-btn::before {
   content: ">";
 }
@@ -120,6 +209,12 @@ body {
 .landing .landing-btn::after {
   color: #FFF;
   opacity: 1;
+}
+
+@media (min-width: 800px) {
+  .landing {
+    background-image: url("/images/sven-read-8p17jXyfIQQ-unsplash.jpg");
+  }
 }
 
 .portfolio {
@@ -141,6 +236,7 @@ body {
   border-radius: 10px;
   padding: 2.34rem 0;
   width: 95%;
+  max-width: 350px;
   margin: 0 auto 3.17rem;
   -webkit-box-shadow: #888 0 4px 4px;
           box-shadow: #888 0 4px 4px;
@@ -149,7 +245,7 @@ body {
 
 .portfolio .project-container .project-image {
   background-image: url(/images/Photography-Mocksite-Kenneth-Lu-Diaz.png);
-  background-position: top center;
+  background-position-x: -5px;
   max-width: 300px;
   height: 300px;
   margin: 0 auto 2.34rem;
